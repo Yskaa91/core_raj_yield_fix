@@ -196,7 +196,7 @@ class SAJsensor(SensorEntity):
 
         if pysaj_sensor.name in ("current_power", "temperature"):
             self._attr_state_class = SensorStateClass.MEASUREMENT
-        if pysaj_sensor.name == "total_yield":
+        if pysaj_sensor.name in ("total_yield", "today_yield"):
             self._attr_state_class = SensorStateClass.TOTAL_INCREASING
 
         self._attr_unique_id = f"{serialnumber}_{pysaj_sensor.name}"
